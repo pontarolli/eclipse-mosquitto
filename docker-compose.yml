@@ -1,14 +1,15 @@
-version: '3.3'
+# docker-compose -f docker-compose.yml -p my-mqtt-project up
+
+version: '3.7'
 
 services:
 
   mosquitto:
-    image: eclipse-mosquitto:1.6.15    
-    container_name: eclipse-mosquitto
-    restart: always
-    ports:
-      - 1883:1883
+    image: eclipse-mosquitto:1.6.15  
+    # ports:
+    #   - 1883:1883
     volumes:
     - /mosquitto/config
     - /mosquitto/data
     - /mosquitto/log
+    network_mode: "host" 
