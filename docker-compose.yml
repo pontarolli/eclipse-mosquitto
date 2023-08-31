@@ -1,7 +1,7 @@
 version: '3'
 services:
   mosquitto:
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:1.6.15
     container_name: mosquitto 
     ports:
       - "1883:1883"  # MQTT port
