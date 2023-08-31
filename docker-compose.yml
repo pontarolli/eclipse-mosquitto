@@ -1,14 +1,14 @@
-version: '3.3'
-
+version: '3'
 services:
-
-  mongo:
-    image: eclipse-mosquitto:1.6.15    
-    container_name: eclipse-mosquitto
-    restart: always
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
     ports:
-      - 1883:1883
+      - "1883:1883"  # MQTT port
+      - "9001:9001"  # WebSockets port (optional)
     volumes:
-    - /mosquitto/config
-    - /mosquitto/data
-    - /mosquitto/log
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    restart: always
+
