@@ -5,9 +5,11 @@ services:
     container_name: mosquitto
     ports:
       - "1883:1883"  # MQTT port
-      - "9001:9001"  # WebSockets port (optional)
     volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
+      - eclipse-mosquitto-data:/mosquitto/config
+      - eclipse-mosquitto-data:/mosquitto/data
+      - eclipse-mosquitto-data:/mosquitto/log
     restart: always
+
+volumes:
+  eclipse-mosquitto-data:
