@@ -1,0 +1,17 @@
+{
+  "name": "eclipse-mosquitto",
+  "version": "1.0.0",
+  "description": "```bash\r docker-compose up -d\r ```",
+  "main": "mqtt.test.js",
+  "scripts": {
+    "test": "npx mocha mqtt.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^5.10.3"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
